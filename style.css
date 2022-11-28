@@ -1,0 +1,102 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center; /*это свойство используется для выравнивания по второстепенной оси*/
+  background: linear-gradient(320deg, #faf0cd, #fab397);
+  display: flex; /*элементы выстроились вдоль главной оси x*/
+  /*Ось можно поменять если прописать flex-direction: column*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-display: swap;
+  height: inherit;
+  justify-content: center; /*это свойство используется для выравнивания по главной оси*/
+}
+
+.wrapper {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+  border-radius: 16px;
+  flex-basis: 400px; /*задали размер обертки по основной оси*/
+  height: 540px;
+  padding: 20px 35px; /*задали внутренние отступы по вертикали и горизонтали*/
+}
+
+.screen {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.01);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+  color: #232323;
+  font-size: 35px;
+  overflow: auto; /*свойство для переноса если элемент не влезает в прямоугольный элемент screen, выходит за рамки границы. Конкретно в этой ситуации браузер пользователя сам будет решать нужно ли добавлять скролл или нет. Проще всего всегда докидывать auto*/
+  padding: 20px;
+  text-align: right;
+  width: 326px;
+}
+
+.calc-button-row {
+  display: flex;
+  justify-content: space-between; /*с края стоит первый элемент, а в конце последний элемент calc-button-row, остальные элементы равно распределяются между ними*/
+  margin: 5% 0; /*отступы сверху и снизу в 5% и 0 слева и справа*/
+}
+
+.calc-button {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+  color: #232323;
+  flex-basis: 20%;
+  font-family: inherit;
+  font-size: 25px;
+  height: 60px;
+}
+
+.calc-button:last-child {
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
+  background-color: #ff69b4;
+  color: white;
+}
+
+.calc-button:last-child:hover {
+  background-color: inherit;
+  color: inherit; /*при наведении но не нажатии будет менять цвет на цвет фона*/
+}
+
+.calc-button:hover {
+  background-color: inherit;
+}
+
+.calc-button:active {
+  background-color: #fffae7;
+}
+
+.double {
+  flex-basis: 47%; /*растянули кнопку C как две обычные кнопки*/
+}
+
+.triple {
+  flex-basis: 73%;
+}
